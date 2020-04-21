@@ -27,7 +27,7 @@
             <td>{{$item->status_tarefa}}</td>
             <td>
                 <a href="{{route('edit',['id_tarefas'=>$item->id_tarefas])}}" class="btn btn-sm btn-info">Editar</a>
-                <a href="{{route('del',['id_tarefas'=>$item->id_tarefas])}}" class="btn btn-sm btn-danger">Excluir</a>
+                <a href="{{route('del',['id_tarefas'=>$item->id_tarefas])}}" class="btn btn-sm btn-danger" onclick="return confirm('DESEJA EXCLUIR A TAREFA ?')">Excluir</a>
             </td>
         </tr>
     @endforeach

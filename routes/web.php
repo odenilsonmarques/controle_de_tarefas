@@ -17,14 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::prefix('tarefa')->group(function(){
-
-    Route::get('/','AdminTarefaController\TarefaController@list')->name('list');
+   
+    //1ª rotas feitas durante o desenvolvimento desse sistema
+    Route::get('list','AdminTarefaController\TarefaController@list')->name('list');
 
     Route::get('add','AdminTarefaController\TarefaController@add')->name('add');
 
@@ -36,6 +33,8 @@ Route::prefix('tarefa')->group(function(){
 
     Route::get('delete/{id_tarefas}','AdminTarefaController\TarefaController@del')->name('del');
 
-
+    Route::fallback(function(){
+        return view('AdminTarefaViews\404');
+    });
 
 });

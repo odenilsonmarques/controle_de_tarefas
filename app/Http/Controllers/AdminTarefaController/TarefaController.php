@@ -29,7 +29,6 @@ class TarefaController extends Controller
             'data_fim'=>['required','date'],
             'status_tarefa'=>['required','string']
         ]);
-
         $nome_tarefa = $request->input('nome_tarefa');
         $data_inicio = $request->input('data_inicio');
         $data_fim = $request->input('data_fim');
@@ -42,6 +41,37 @@ class TarefaController extends Controller
         $tarefa-> status_tarefa = $status_tarefa;
 
         $tarefa->save();
+        return redirect()->route('list');
+    }
+
+    public function edit($id_tarefas){
+        $data = Tarefa::find($id_tarefas);
+        if($data){
+            return view('AdminTarefaViews.edit',['data'=>$data]);
+        }else{
+            return redirect()->route('list');
+        }
+    }
+
+    public function editAction(Request $request, $id_tarefas){
+        $request->validate([
+            'nome_tarefa'=>['required','string','min:5'],
+            'data_inicio'=>['required','date'],
+            'data_fim'=>['required','date'],
+            'status_tarefa'=>['required','string']
+        ]);
+        $nome_tarefa = $request->input('nome_tarefa');
+        $data_inicio = $request->input('data_inicio');
+        $data_fim = $request->input('data_fim');
+        $status_tarefa = $request->input('status_tarefa');
+        //para usar o comando abaixo é necessario permitir no arquivo model Tarefa, atraves do comando $fillable, pois é como se estivesse se passando um grande massa de dados. Porem pode ser feito de outra forma
+        Tarefa::find($id_tarefas)
+        ->update(['nome_tarefa'=>$nome_tarefa,'data_inicio'=>$data_inicio,'data_fim'=>$data_fim,'status_tarefa'=>$status_tarefa]);
+        return redirect()->route('list');
+    }
+
+    public function del($id_tarefas){
+        Tarefa::find($id_tarefas)->delete();
         return redirect()->route('list');
     }
 }

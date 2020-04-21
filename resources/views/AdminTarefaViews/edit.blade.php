@@ -21,7 +21,7 @@
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label for="nome_tarefa">NOME DA TAREFA</label><br>
-                        <input type="text" name="nome_tarefa" id="nome_tarefa" class="form-control" value="{{old('nome_tarefa')}}" placeholder="Informe o nome da tarefa">
+                        <input type="text" name="nome_tarefa" id="nome_tarefa" class="form-control" value="{{$data->nome_tarefa}}" placeholder="Informe o nome da tarefa">
                     </div>
                 </div>
             </div>
@@ -29,13 +29,13 @@
                 <div class="col-sm-4">
                     <div class="form-group ">
                         <label for="titulo">DATA DE INICIO</label><br>
-                        <input type="date" name="data_inicio" id="data_inicio" class="form-control" value="{{old('data_inicio')}}">
+                        <input type="date" name="data_inicio" id="data_inicio" class="form-control" value="{{$data->data_inicio}}">
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
                         <label for="titulo">DATA DE FIM</label><br>
-                        <input type="date" name="data_fim" id="data_fim" class="form-control" value="{{old('data_fim')}}" placeholder="Informe a data">
+                        <input type="date" name="data_fim" id="data_fim" class="form-control" value="{{$data->data_fim}}" placeholder="Informe a data">
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                        <button type="submit" class="btn btn-success">Salvar Alteração</button>
                         <a class="btn btn-danger" href="{{route('list')}}" role="button">Cancelar</a>
                     </div>
                 </div>

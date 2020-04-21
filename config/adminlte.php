@@ -216,12 +216,12 @@ return [
         ],
         [
             'text' => 'Cadastrar',
-            'url'  => 'agenda/add',
+            'url'  => 'tarefa/add',
             'icon' => 'fas fa-fw fa-user-plus',
         ],
         [
             'text' => 'Listar',
-            'url'  => 'agenda/',
+            'url'  => 'tarefa/list',
             'icon' => 'fas fa-fw fa-list',
         ],
         [
