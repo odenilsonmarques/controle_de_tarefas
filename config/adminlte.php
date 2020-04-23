@@ -167,15 +167,15 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => '#',
 
-    'logout_url' => 'logout',
+    'logout_url' => 'tarefa/logout',
 
-    'login_url' => 'login',
+    'login_url' => 'tarefa/login',
 
-    'register_url' => 'register',
+    'register_url' => null,//'tarefa/register',
 
-    'password_reset_url' => 'password/reset',
+    'password_reset_url' => null, //'password/reset',
 
     'password_email_url' => 'password/email',
 
@@ -223,11 +223,6 @@ return [
             'text' => 'Listar',
             'url'  => 'tarefa/list',
             'icon' => 'fas fa-fw fa-list',
-        ],
-        [
-            'text' => 'Sair',
-            'url'  => 'logout/',
-            'icon' => 'fas fa-power-off',
         ],
     ],
 

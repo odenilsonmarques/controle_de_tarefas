@@ -12,6 +12,12 @@ use Illuminate\Http\Request;
 
 class TarefaController extends Controller
 {
+
+    //esse contrutor, tem como proposito redirecionar o usuario para pagina de login, se este não estiver logado e tentar acessar alguma aera do sistema
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function list(){
         //$list = Tarefa::all();
         $list = Tarefa::paginate(5);
