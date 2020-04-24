@@ -38,7 +38,7 @@ class RegisterController extends Controller
     //protected $redirectTo = RouteServiceProvider::HOME;
 
     //rota (home) chamada quando for feito o cadastro de um usuario. Por padrao o laravel cria a rota acima, mas tava dando erro, logo resolvi usar a rota abaixo
-    protected $redirectTo = '\home';
+    protected $redirectTo = 'login';
 
     /**
      * Create a new controller instance.
@@ -71,9 +71,10 @@ class RegisterController extends Controller
         }
         //se deu certo ocorre o processo de criação do usuário, usando a função create abaixo
         $user = $this->create($data);
-        //se criou, é mandado logar no usuario
-        Auth::login($user);
-        return redirect()->route('home');
+        //se criou, o usuario é encaminhado para pagina home do sistema, porem isso acontece caso use a função abaixo
+        //Auth::login($user);
+        //se criou o usuario é caminhado para fazer o login, antes de entrar no pagina home do sistema
+        return redirect()->route('login');
     }
 
     /**
