@@ -3,7 +3,7 @@
 
 .O sistema que está sendo desenvolvido, tem como propósito, definir e acompanhar as tarefas a serem implementadas em um projeto, dessa forma o mesmo pode ser utilizado em direfenteres áreas.
 
-.As ferramentas utilzadas: Framework Laravel, (banco de dados) sql, bootstrap, javascript, html e css
+.As ferramentas utilizadas: Framework Laravel, (banco de dados) sql, bootstrap, javascript, html e css
 
 
 
