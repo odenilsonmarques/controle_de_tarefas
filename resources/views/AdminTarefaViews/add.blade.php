@@ -45,7 +45,7 @@
                             <option value="">Selecione</option><br/>
                             <option value="Pendente">Pendente</option>
                             <option value="Concluída">Concluída</option>
-                            <option value="Em Desenvilvemento">Em Desenvilvemento</option>
+                            <option value="Em Desenvolvemento">Em Desenvolvemento</option>
                         </select>
                     </div>
                 </div>

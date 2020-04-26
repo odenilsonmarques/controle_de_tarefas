@@ -31,12 +31,28 @@ class HomeController extends Controller
     public function index(){
         return view('AdminTarefaViews.home');
     } 
-    
-
      //este metodo é reponsavel por chamar a view index do sistema
      public function home(){
-        $home = Tarefa::all();
-        return view('AdminTarefaViews.home',['home'=>$home]);
+
+        //contagem de tarefas cadastradas
+        $TotalTarefa = Tarefa::count();
+
+        //tarefas pendenetes
+        $TarefasPendentes = Tarefa::where('status_tarefa', '=', 'Pendente')->count();
+
+        //tarefas concluidas
+        $TarefasConcluídas = Tarefa::where('status_tarefa', '=', 'Concluída')->count();
+
+        //tarefas em desenvolvimanto
+        $TarefasEmDesenvolvimento = Tarefa::where('status_tarefa', '=', 'Em Desenvolvimento')->count();
+
+        return view('AdminTarefaViews.home',[
+        'TotalTarefa'=>$TotalTarefa,
+        'TarefasPendentes'=>$TarefasPendentes,
+        'TarefasConcluídas'=>$TarefasConcluídas,
+        'TarefasEmDesenvolvimento'=>$TarefasEmDesenvolvimento
+        
+        ]);        
     }
     
 

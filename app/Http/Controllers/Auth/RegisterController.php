@@ -8,10 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
 //importando o Auth
 use Illuminate\Support\Facades\Auth;
-
 //importando o request
 use Illuminate\Http\Request;
 

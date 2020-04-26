@@ -167,7 +167,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => '#',
+    'dashboard_url' => '/',
 
     'logout_url' => 'tarefa/logout',
 
@@ -175,7 +175,7 @@ return [
 
     'register_url' => null,//'tarefa/register',
 
-    'password_reset_url' => null, //'password/reset',
+    'password_reset_url' =>null, // 'password/reset',
 
     'password_email_url' => 'password/email',
 
