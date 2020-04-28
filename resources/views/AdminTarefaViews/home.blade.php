@@ -19,7 +19,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-3">
             <div class="small-box bg-success">
                 <div class="inner"> 
@@ -31,7 +30,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-3">
             <div class="small-box bg-warning">
                 <div class="inner"> 
@@ -43,7 +41,6 @@
                 </div>
             </div>
         </div>  
-        
         <div class="col-lg-3">
             <div class="small-box bg-danger">
                 <div class="inner"> 
@@ -55,6 +52,12 @@
                 </div>
             </div>
         </div>                                         
+    </div>
+    <div class="card-footer fixed" style="margin-top:370px">
+        <div class="float-right">
+            <!--essa informação foi declarada no arquivo AppServiceProvider-->
+            <b>Versão: {{$versao}}</b>
+        </div>
     </div>
 </div>
 @endsection

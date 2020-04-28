@@ -1,5 +1,5 @@
 <?php
-//foi implemenado nesta rota a pasta AdminTarefaController, pois o controller TarefaController está dentro da pasta AdminTarefaController que está dentro da pasta controller
+//foi implemenado nesta rota a pasta AdminTarefaControllerHome, e dentro dele foi inserido o controller TarefaController.
 namespace App\Http\Controllers\AdminTarefaController;
 
 //importando a classe controller
@@ -40,12 +40,16 @@ class TarefaController extends Controller
         $data_fim = $request->input('data_fim');
         $status_tarefa = $request->input('status_tarefa');
 
+        if($data_inicio > $data_fim){
+           return redirect()->route('add')
+           ->withErrors('Erro! a data de inicio não pode ser maior do que data a final')
+           ->WithInput();
+        }
         $tarefa = new Tarefa();
         $tarefa-> nome_tarefa = $nome_tarefa;
         $tarefa-> data_inicio = $data_inicio;
         $tarefa-> data_fim = $data_fim;
         $tarefa-> status_tarefa = $status_tarefa;
-
         $tarefa->save();
         return redirect()->route('list');
     }
@@ -70,6 +74,12 @@ class TarefaController extends Controller
         $data_inicio = $request->input('data_inicio');
         $data_fim = $request->input('data_fim');
         $status_tarefa = $request->input('status_tarefa');
+
+        if($data_inicio > $data_fim){
+            return redirect()->route('add')
+            ->withErrors('Erro! a data de inicio não pode ser maior do que data a final')
+            ->WithInput();
+         }
         //para usar o comando abaixo é necessario permitir no arquivo model Tarefa, atraves do comando $fillable, pois é como se estivesse se passando um grande massa de dados. Porem pode ser feito de outra forma
         Tarefa::find($id_tarefas)
         ->update(['nome_tarefa'=>$nome_tarefa,'data_inicio'=>$data_inicio,'data_fim'=>$data_fim,'status_tarefa'=>$status_tarefa]);

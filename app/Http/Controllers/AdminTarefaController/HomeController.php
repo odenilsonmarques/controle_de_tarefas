@@ -19,14 +19,12 @@ class HomeController extends Controller
      */
 
      //nota 1: sempre que o usuario logar ele vai ser redirecionado para algumas view, essa configuração está no arquivo RedirectIfAuthenticate que está dentro da pasta middleware
-
     //nota 2: esta rota procura o arquivo authenticate que está dentro da pasta middleware, para mandar o usuario para o form de login.
     
     public function __construct()
     {
         $this->middleware('auth');
     }
-    
     
     public function index(){
         return view('AdminTarefaViews.home');
@@ -37,13 +35,13 @@ class HomeController extends Controller
         //contagem de tarefas cadastradas
         $TotalTarefa = Tarefa::count();
 
-        //tarefas pendenetes
+        //tarefas pendentes
         $TarefasPendentes = Tarefa::where('status_tarefa', '=', 'Pendente')->count();
 
         //tarefas concluidas
         $TarefasConcluídas = Tarefa::where('status_tarefa', '=', 'Concluída')->count();
 
-        //tarefas em desenvolvimanto
+        //tarefas em desenvolvimento
         $TarefasEmDesenvolvimento = Tarefa::where('status_tarefa', '=', 'Em Desenvolvimento')->count();
 
         return view('AdminTarefaViews.home',[

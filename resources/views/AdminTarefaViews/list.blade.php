@@ -3,7 +3,7 @@
 @section('title','tarefas')
     
 @section('content_header')
-    <h2 style="text-align:center"><strong>Bem - vindo a lista de tarefas</strong></h2>
+    <h2 style="text-align:center"><strong>Bem - vindo à lista de tarefas</strong></h2>
     <a href="{{route('add')}}" class="btn btn-sm btn-success">Adicionar nova tarefa</a>
 @endsection
 
@@ -31,10 +31,16 @@
             </td>
         </tr>
     @endforeach
-    </table> 
-</div>
-<!--comando para exibir a paginação iniciada com pagina no AgendaController-->
-{{$list->links()}}  
+    </table><br>
+    <!--comando para exibir a paginação iniciada com pagina no TarefaController-->
+    {{$list->links()}}  
+    <div class="card-footer clearfix">
+        <div class="float-right">
+            <!--essa informação foi declarada no arquivo AppServiceProvider-->
+            <b>Versão: {{$versao}}</b>
+        </div>
+    </div>
+</div>  
 @endsection
 
 
