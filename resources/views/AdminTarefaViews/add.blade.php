@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label for="titulo">DATA DE FIM</label><br>
+                            <label for="titulo">DATA DO TÉRMIMO</label><br>
                             <input type="date" name="data_fim" id="data_fim" class="form-control" value="{{old('data_fim')}}" placeholder="Informe a data">
                         </div>
                     </div>
