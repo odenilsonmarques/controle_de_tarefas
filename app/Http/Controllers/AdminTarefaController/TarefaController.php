@@ -42,7 +42,7 @@ class TarefaController extends Controller
 
         if($data_inicio > $data_fim){
            return redirect()->route('add')
-           ->withErrors('Erro! a data de inicio não pode ser maior do que data a final')
+           ->withErrors('Erro! a data de inicio não pode ser maior do que a data de término')
            ->WithInput();
         }
         $tarefa = new Tarefa();
