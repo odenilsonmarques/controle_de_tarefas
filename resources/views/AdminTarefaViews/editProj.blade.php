@@ -51,9 +51,9 @@
                             <label for="status_projeto">STATUS</label><br>
                             <select class="form-control" name="status_projeto">
                                 <option value="">Selecione</option><br/>
-                                <option value="Pendente">Pendente</option>
+                                <option value="Em Desenvolvimento">Em Desenvolvimento</option>
                                 <option value="Concluído">Concluído</option>
-                                <option value="Em Desenvolvemento">Em Desenvolvemento</option>
+                                <option value="Pendente">Pendente</option>
                             </select>
                         </div>
                     </div>

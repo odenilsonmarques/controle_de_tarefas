@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="nome_tarefa">NOME DO PREJETO</label><br>
+                            <label for="nome_tarefa">NOME DO PROJETO</label><br>
                             <input type="text" name="nome_projeto" id="nome_projeto" class="form-control" value="{{old('nome_projeto')}}" placeholder="Informe o nome do projeto">
                         </div>
                     </div>
@@ -49,12 +49,7 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="status_projeto">STATUS</label><br>
-                            <select class="form-control" name="status_projeto">
-                                <option value="">Selecione</option><br/>
-                                <option value="Pendente">Pendente</option>
-                                <option value="Concluído">Concluído</option>
-                                <option value="Em Desenvolvemento">Em Desenvolvemento</option>
-                            </select>
+                            <input type="text" name="status_projeto" id="status_projeto" value="Iniciado" readonly="" class="form-control">
                         </div>
                     </div>
                 </div>

@@ -20,18 +20,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-3">
-            <div class="small-box bg-success">
-                <div class="inner"> 
-                    <h3>{{$ProjetosConcluídos}}</h3>
-                        <h5 style="color:#FFF">Projetos Concluídos</h5><br /> 
-                </div>
-                <div class="icon">
-                    <i class="far fa-thumbs-up"></i>
-                </div>
-            </div>
-        </div>
         <div class="col-lg-3">
             <div class="small-box bg-warning">
                 <div class="inner"> 
@@ -43,6 +31,18 @@
                 </div>
             </div>
         </div>  
+        <div class="col-lg-3">
+            <div class="small-box bg-success">
+                <div class="inner"> 
+                    <h3>{{$ProjetosConcluídos}}</h3>
+                        <h5 style="color:#FFF">Projetos Concluídos</h5><br /> 
+                </div>
+                <div class="icon">
+                    <i class="far fa-thumbs-up"></i>
+                </div>
+            </div>
+        </div>
+        
         <div class="col-lg-3">
             <div class="small-box bg-danger">
                 <div class="inner"> 
@@ -72,17 +72,6 @@
             </div>
         </div>
         <div class="col-lg-3">
-            <div class="small-box bg-success">
-                <div class="inner"> 
-                    <h3>{{$TarefasConcluídas}}</h3>
-                        <h5 style="color:#FFF">Funcionalidades Concluídas</h5>
-                </div>
-                <div class="icon">
-                    <i class="far fa-thumbs-up"></i>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
             <div class="small-box bg-warning">
                 <div class="inner"> 
                     <h3>{{$TarefasEmDesenvolvimento}}</h3>
@@ -93,6 +82,18 @@
                 </div>
             </div>
         </div>  
+        <div class="col-lg-3">
+            <div class="small-box bg-success">
+                <div class="inner"> 
+                    <h3>{{$TarefasConcluídas}}</h3>
+                        <h5 style="color:#FFF">Funcionalidades Concluídas</h5>
+                </div>
+                <div class="icon">
+                    <i class="far fa-thumbs-up"></i>
+                </div>
+            </div>
+        </div>
+        
         <div class="col-lg-3">
             <div class="small-box bg-danger">
                 <div class="inner"> 

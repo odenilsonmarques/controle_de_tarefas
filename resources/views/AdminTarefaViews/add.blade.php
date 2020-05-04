@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="titulo">STATUS PROJETO</label><br>
+                            <label for="titulo">PROJETO</label><br>
                             <select class="form-control" name="status_projeto">
                                     <option value="">Selecione um projeto</option><br/><br/>
                                     @foreach($projeto as $item)
