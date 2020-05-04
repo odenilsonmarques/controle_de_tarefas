@@ -34,7 +34,6 @@
         </tr>
     @endforeach
     </table><br>
-    
     <div class="card-footer clearfix">
         <div class="float-right">
             <!--essa informação foi declarada no arquivo AppServiceProvider-->

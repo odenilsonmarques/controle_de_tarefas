@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 //importanto o model a ser usado nesse controller
 use App\Tarefa;
 
+//importanto o model a ser usado nesse controller
+use App\Projeto;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -32,6 +35,21 @@ class HomeController extends Controller
      //este metodo é reponsavel por chamar a view index do sistema
      public function home(){
 
+        //contagem de projetos cadastradas
+        $TotalProjeto = Projeto::count();
+
+        //projetos concluído
+        $ProjetosConcluídos = Projeto::where('status_projeto', '=', 'Concluído')->count();
+
+         //projetos pendentes
+         $ProjetosPendentes = Projeto::where('status_projeto', '=', 'Pendente')->count();
+
+        //projetos desenvolvimento
+        $ProjetosEmDesenvolvimento = Projeto::where('status_projeto', '=', 'Em Desenvolvimento')->count();
+
+
+
+
         //contagem de tarefas cadastradas
         $TotalTarefa = Tarefa::count();
 
@@ -48,7 +66,12 @@ class HomeController extends Controller
         'TotalTarefa'=>$TotalTarefa,
         'TarefasPendentes'=>$TarefasPendentes,
         'TarefasConcluídas'=>$TarefasConcluídas,
-        'TarefasEmDesenvolvimento'=>$TarefasEmDesenvolvimento
+        'TarefasEmDesenvolvimento'=>$TarefasEmDesenvolvimento,
+
+        'TotalProjeto'=>$TotalProjeto,
+        'ProjetosConcluídos'=>$ProjetosConcluídos,
+        'ProjetosPendentes'=>$ProjetosPendentes,
+        'ProjetosEmDesenvolvimento'=>$ProjetosEmDesenvolvimento
         
         ]);        
     }

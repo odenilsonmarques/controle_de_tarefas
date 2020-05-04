@@ -40,9 +40,9 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label for="titulo">STATUS</label><br>
+                            <label for="titulo">STATUS TAREFA</label><br>
                             <select class="form-control" name="status_tarefa">
-                                <option value="">Selecione</option><br/>
+                                <option value="">Selecione uma tarefa</option><br/>
                                 <option value="Pendente">Pendente</option>
                                 <option value="Concluída">Concluída</option>
                                 <option value="Em Desenvolvemento">Em Desenvolvemento</option>
@@ -50,6 +50,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="titulo">STATUS PROJETO</label><br>
+                            <select class="form-control" name="status_projeto">
+                                    <option value="">Selecione um projeto</option><br/><br/>
+                                    @foreach($projeto as $item)
+                                         <br><option value="{{$item['id_projeto']}}">{{$item['nome_projeto']}}</option><br/>
+                                    @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="row">
                     <div class="col-sm-12">
                             <button type="submit" class="btn btn-success">Cadastrar</button>

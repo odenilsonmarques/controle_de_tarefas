@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 class ProjetoController extends Controller
 {
+
     public function listProj(){
         $listProj = Projeto::all();
         return view('AdminTarefaViews.listProj',['listProj'=>$listProj]);

@@ -13,4 +13,9 @@ class Projeto extends Model
     public $timestamps = false;
 
     protected $fillable = ['nome_projeto','descricao','data_inicio','data_fim','status_projeto'];
+
+    public function tarefas(){
+        return $this->hasMany(Tarefa::class);
+    }
+
 }

@@ -214,17 +214,40 @@ return [
             'url'  => '/',
             'icon' => 'fas fa-fw fa-home',
         ],
+
         [
-            'text' => 'Cadastrar',
-            'url'  => 'tarefa/add',
-            'icon' => 'fas fa-fw fa-user-plus',
+            'text'    => 'Cadastrar',
+            'icon'    => 'fas fa-fw fa-user-plus',
+            'submenu' => [
+                [
+                    'text' => 'Projeto',
+                    'url'  => 'tarefa/addProj',
+                ],
+                [
+                    'text' => 'Tarefa',
+                    'url'  => 'tarefa/add',
+                ],
+            ],
         ],
+
         [
-            'text' => 'Listar',
-            'url'  => 'tarefa/list',
-            'icon' => 'fas fa-fw fa-list',
+            'text'    => 'Listar',
+            'icon'    => 'fas fa-fw fa-list',
+            'submenu' => [
+                [
+                    'text' => 'Projeto',
+                    'url'  => 'tarefa/listProj',
+                ],
+                [
+                    'text' => 'Tarefa',
+                    'url'  => 'tarefa/list',
+                ],
+            ],
         ],
+        
     ],
+
+    
 
     /*
     |--------------------------------------------------------------------------
