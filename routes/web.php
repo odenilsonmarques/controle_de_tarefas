@@ -36,17 +36,17 @@ Route::prefix('tarefa')->group(function(){
 
 
 
-    Route::get('list','AdminTarefaController\TarefaController@list')->name('list');
+    Route::get('listFunc','AdminTarefaController\FuncionalidadeController@listFunc')->name('listFunc');
 
-    Route::get('add','AdminTarefaController\TarefaController@add')->name('add');
+    Route::get('addFunc','AdminTarefaController\FuncionalidadeController@addFunc')->name('addFunc');
 
-    Route::post('add','AdminTarefaController\TarefaController@addAction');
+    Route::post('addFunc','AdminTarefaController\FuncionalidadeController@addActionFunc');
 
-    Route::get('edit/{id_tarefas}','AdminTarefaController\TarefaController@edit')->name('edit');
+    Route::get('editFunc/{id_funcionalidade}','AdminTarefaController\FuncionalidadeController@editFunc')->name('editFunc');
 
-    Route::post('edit/{id_tarefas}','AdminTarefaController\TarefaController@editAction');
+    Route::post('editFunc/{id_funcionalidade}','AdminTarefaController\FuncionalidadeController@editActionFunc');
 
-    Route::get('delete/{id_tarefas}','AdminTarefaController\TarefaController@del')->name('del');
+    Route::get('deleteFunc/{id_funcionalidade}','AdminTarefaController\FuncionalidadeController@delFunc')->name('delFunc');
 
     //as rotas abaixo foram as segundas a serem criada durante o desenvolvimento do projeto
     Route::get('register','Auth\RegisterController@index')->name('register');

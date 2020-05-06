@@ -66,7 +66,6 @@
                 </div>
             </div>
         </form>
-
         <div class="card-footer clearfix">
             <div class="row">
                 <div class="col-sm-12">

@@ -6,7 +6,7 @@ namespace App\Http\Controllers\AdminTarefaController;
 use App\Http\Controllers\Controller;
 
 //importanto o model a ser usado nesse controller
-use App\Tarefa;
+use App\Funcionalidade;
 
 //importanto o model a ser usado nesse controller
 use App\Projeto;
@@ -28,7 +28,6 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-    
     public function index(){
         return view('AdminTarefaViews.home');
     } 
@@ -36,42 +35,40 @@ class HomeController extends Controller
      public function home(){
 
         //contagem de projetos cadastradas
-        $TotalProjeto = Projeto::count();
+        $totalProjetos = Projeto::count();
 
         //projetos concluído
-        $ProjetosConcluídos = Projeto::where('status_projeto', '=', 'Concluído')->count();
+        $projetosConcluídos = Projeto::where('status_projeto', '=', 'Concluído')->count();
 
          //projetos pendentes
-         $ProjetosPendentes = Projeto::where('status_projeto', '=', 'Pendente')->count();
+         $projetosPendentes = Projeto::where('status_projeto', '=', 'Pendente')->count();
 
         //projetos desenvolvimento
-        $ProjetosEmDesenvolvimento = Projeto::where('status_projeto', '=', 'Em Desenvolvimento')->count();
-
-
+        $projetosEmDesenvolvimento = Projeto::where('status_projeto', '=', 'Em Desenvolvimento')->count();
 
 
         //contagem de tarefas cadastradas
-        $TotalTarefa = Tarefa::count();
+        $totalFuncionalidades = Funcionalidade::count();
 
-        //tarefas pendentes
-        $TarefasPendentes = Tarefa::where('status_tarefa', '=', 'Pendente')->count();
+        //funcionalidade pendentes
+        $funcionalidadesPendentes = Funcionalidade::where('status_funcionalidade', '=', 'Pendente')->count();
 
-        //tarefas concluidas
-        $TarefasConcluídas = Tarefa::where('status_tarefa', '=', 'Concluída')->count();
+        //funcionalidade concluidas
+        $funcionalidadesConcluídas = Funcionalidade::where('status_funcionalidade', '=', 'Concluída')->count();
 
-        //tarefas em desenvolvimento
-        $TarefasEmDesenvolvimento = Tarefa::where('status_tarefa', '=', 'Em Desenvolvimento')->count();
+        //funcionalidade em desenvolvimento
+        $funcionalidadesEmDesenvolvimento = Funcionalidade::where('status_funcionalidade', '=', 'Em Desenvolvimento')->count();
 
         return view('AdminTarefaViews.home',[
-        'TotalTarefa'=>$TotalTarefa,
-        'TarefasPendentes'=>$TarefasPendentes,
-        'TarefasConcluídas'=>$TarefasConcluídas,
-        'TarefasEmDesenvolvimento'=>$TarefasEmDesenvolvimento,
+        'totalFuncionalidades'=>$totalFuncionalidades,
+        'funcionalidadesPendentes'=>$funcionalidadesPendentes,
+        'funcionalidadesConcluídas'=>$funcionalidadesConcluídas,
+        'funcionalidadesEmDesenvolvimento'=>$funcionalidadesEmDesenvolvimento,
 
-        'TotalProjeto'=>$TotalProjeto,
-        'ProjetosConcluídos'=>$ProjetosConcluídos,
-        'ProjetosPendentes'=>$ProjetosPendentes,
-        'ProjetosEmDesenvolvimento'=>$ProjetosEmDesenvolvimento
+        'totalProjetos'=>$totalProjetos,
+        'projetosConcluídos'=>$projetosConcluídos,
+        'projetosPendentes'=>$projetosPendentes,
+        'projetosEmDesenvolvimento'=>$projetosEmDesenvolvimento,
         
         ]);        
     }

@@ -3,7 +3,7 @@
 @section('title','projetos')
     
 @section('content_header')
-    <h2 style="text-align:center"><strong>Bem - vindo à lista de projetos</strong></h2>
+    <h2 style="text-align:center"><strong>lista de projetos</strong></h2>
     <a href="{{route('addProj')}}" class="btn btn-sm btn-success">Adicionar novo projeto</a>
 @endsection
 
@@ -34,6 +34,8 @@
         </tr>
     @endforeach
     </table><br>
+      <!--comando para exibir a paginação iniciada com pagina no TarefaController-->
+      {{$listProj->links()}} 
     <div class="card-footer clearfix">
         <div class="float-right">
             <!--essa informação foi declarada no arquivo AppServiceProvider-->

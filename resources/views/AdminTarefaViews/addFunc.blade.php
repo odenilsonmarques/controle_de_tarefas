@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title','adicionar tarefa')
+@section('title','adicionar funcionalidade')
     
 @section('content')
     <div class="card">
@@ -20,8 +20,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="nome_tarefa">NOME DA TAREFA</label><br>
-                            <input type="text" name="nome_tarefa" id="nome_tarefa" class="form-control" value="{{old('nome_tarefa')}}" placeholder="Informe o nome da tarefa">
+                            <label for="nome_funcionalidade">NOME DA FUNCIONALIDADE</label><br>
+                            <input type="text" name="nome_funcionalidade"" id="nome_funcionalidade"" class="form-control" value="{{old('nome_funcionalidade"')}}" placeholder="Informe o nome da funcionalidade">
                         </div>
                     </div>
                 </div>
@@ -40,13 +40,8 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label for="titulo">STATUS TAREFA</label><br>
-                            <select class="form-control" name="status_tarefa">
-                                <option value="">Selecione uma tarefa</option><br/>
-                                <option value="Pendente">Pendente</option>
-                                <option value="Concluída">Concluída</option>
-                                <option value="Em Desenvolvemento">Em Desenvolvemento</option>
-                            </select>
+                            <label for="titulo">STATUS FUNCIONALIDADE</label><br>
+                            <input type="text" name="status_funcionalidade" id="status_funcionalidade" value="Em Desenvolvimento" readonly="" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -54,7 +49,7 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             <label for="titulo">PROJETO</label><br>
-                            <select class="form-control" name="status_projeto">
+                            <select class="form-control" name="projeto">
                                     <option value="">Selecione um projeto</option><br/><br/>
                                     @foreach($projeto as $item)
                                          <br><option value="{{$item['id_projeto']}}">{{$item['nome_projeto']}}</option><br/>
@@ -63,16 +58,14 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="row">
                     <div class="col-sm-12">
                             <button type="submit" class="btn btn-success">Cadastrar</button>
-                            <a class="btn btn-danger" href="{{route('list')}}" role="button">Cancelar</a>
+                            <a class="btn btn-danger" href="{{route('listFunc')}}" role="button">Cancelar</a>
                     </div>
                 </div>
             </div>
         </form>
-
         <div class="card-footer clearfix">
             <div class="row">
                 <div class="col-sm-12">

@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Controle de Tarefas',
+    'title' => 'Controle de projetos',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Controle de Tarefas</b>',
+    'logo' => '<b>Controle de Projetos</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -225,7 +225,7 @@ return [
                 ],
                 [
                     'text' => 'Tarefa',
-                    'url'  => 'tarefa/add',
+                    'url'  => 'tarefa/addFunc',
                 ],
             ],
         ],
@@ -240,7 +240,7 @@ return [
                 ],
                 [
                     'text' => 'Tarefa',
-                    'url'  => 'tarefa/list',
+                    'url'  => 'tarefa/listFunc',
                 ],
             ],
         ],

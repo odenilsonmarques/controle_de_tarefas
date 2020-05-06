@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 <!--trocando o titulo da home-->
-@section('title','tarefas')
+@section('title','home')
 
 @section('content')
 <div class="container-fluid">
@@ -10,7 +10,7 @@
         <div class="col-lg-3">
             <div class="small-box bg-primary">
                 <div class="inner"> 
-                    <h3>{{$TotalProjeto}}</h3>
+                    <h3>{{$totalProjetos}}</h3>
                         <a href="{{route('listProj')}}">
                         <h5 style="color:#FFF">Total de Projetos</h5><br />
                     </a>
@@ -23,7 +23,7 @@
         <div class="col-lg-3">
             <div class="small-box bg-warning">
                 <div class="inner"> 
-                    <h3>{{$ProjetosEmDesenvolvimento}}</h3>
+                    <h3>{{$projetosEmDesenvolvimento}}</h3>
                         <h5 style="color:#FFF">Projetos Em Desenvolvimento</h5> 
                 </div>
                 <div class="icon">
@@ -34,19 +34,18 @@
         <div class="col-lg-3">
             <div class="small-box bg-success">
                 <div class="inner"> 
-                    <h3>{{$ProjetosConcluídos}}</h3>
+                    <h3>{{$projetosConcluídos}}</h3>
                         <h5 style="color:#FFF">Projetos Concluídos</h5><br /> 
                 </div>
                 <div class="icon">
                     <i class="far fa-thumbs-up"></i>
                 </div>
             </div>
-        </div>
-        
+        </div>        
         <div class="col-lg-3">
             <div class="small-box bg-danger">
                 <div class="inner"> 
-                    <h3>{{$ProjetosPendentes}}</h3>
+                    <h3>{{$projetosPendentes}}</h3>
                         <h5 style="color:#FFF">Projetos Pendentes</h5><br /> 
                 </div>
                 <div class="icon">
@@ -61,8 +60,8 @@
         <div class="col-lg-3">
             <div class="small-box bg-info">
                 <div class="inner"> 
-                    <h3>{{$TotalTarefa}}</h3>
-                        <a href="{{route('list')}}">
+                    <h3>{{$totalFuncionalidades}}</h3>
+                        <a href="{{route('listFunc')}}">
                         <h5 style="color:#FFF">Total de Funcionalidades</h5><br />
                     </a>
                 </div>
@@ -74,7 +73,7 @@
         <div class="col-lg-3">
             <div class="small-box bg-warning">
                 <div class="inner"> 
-                    <h3>{{$TarefasEmDesenvolvimento}}</h3>
+                    <h3>{{$funcionalidadesEmDesenvolvimento}}</h3>
                         <h5 style="color:#FFF">Funcionalidades Em Desenvolvimento</h5> 
                 </div>
                 <div class="icon">
@@ -85,7 +84,7 @@
         <div class="col-lg-3">
             <div class="small-box bg-success">
                 <div class="inner"> 
-                    <h3>{{$TarefasConcluídas}}</h3>
+                    <h3>{{$funcionalidadesConcluídas}}</h3>
                         <h5 style="color:#FFF">Funcionalidades Concluídas</h5>
                 </div>
                 <div class="icon">
@@ -93,11 +92,10 @@
                 </div>
             </div>
         </div>
-        
         <div class="col-lg-3">
             <div class="small-box bg-danger">
                 <div class="inner"> 
-                    <h3>{{$TarefasPendentes}}</h3>
+                    <h3>{{$funcionalidadesPendentes}}</h3>
                         <h5 style="color:#FFF">Funcionalidades Pendentes</h5><br />
                 </div>
                 <div class="icon">

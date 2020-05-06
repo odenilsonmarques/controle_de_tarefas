@@ -12,9 +12,13 @@ use Illuminate\Http\Request;
 
 class ProjetoController extends Controller
 {
-
+    
+    //esse contrutor, tem como proposito redirecionar o usuario para pagina de login, se este não estiver logado e tentar acessar alguma aera do sistema
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function listProj(){
-        $listProj = Projeto::all();
+        $listProj = Projeto::paginate(5);
         return view('AdminTarefaViews.listProj',['listProj'=>$listProj]);
     }
     public function addProj(){
@@ -39,7 +43,6 @@ class ProjetoController extends Controller
                 ->withErrors('Erro! a data de inicio não pode ser maior do que a data de término')
                 ->WithInput();
             }
-
             $projeto = new Projeto();
             $projeto-> nome_projeto = $nome_projeto;
             $projeto-> descricao = $descricao;
@@ -49,7 +52,6 @@ class ProjetoController extends Controller
             $projeto-> save();
             return redirect()->route('listProj');
     }
-
     public function editProj($id_projeto){
         $data = Projeto::find($id_projeto);
         if($data){
@@ -86,6 +88,4 @@ class ProjetoController extends Controller
         Projeto::find($id_projeto)->delete();
         return redirect()->route('listProj');
     }
-
-
 }

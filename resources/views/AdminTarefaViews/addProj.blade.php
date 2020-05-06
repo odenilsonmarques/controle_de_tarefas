@@ -49,19 +49,18 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="status_projeto">STATUS</label><br>
-                            <input type="text" name="status_projeto" id="status_projeto" value="Iniciado" readonly="" class="form-control">
+                            <input type="text" name="status_projeto" id="status_projeto" value="Em Desenvolvimento" readonly="" class="form-control">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                             <button type="submit" class="btn btn-success">Cadastrar</button>
-                            <a class="btn btn-danger" href="{{route('list')}}" role="button">Cancelar</a>
+                            <a class="btn btn-danger" href="{{route('listProj')}}" role="button">Cancelar</a>
                     </div>
                 </div>
             </div>
         </form>
-
         <div class="card-footer clearfix">
             <div class="row">
                 <div class="col-sm-12">
