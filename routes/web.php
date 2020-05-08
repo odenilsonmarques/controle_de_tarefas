@@ -17,11 +17,9 @@ use Illuminate\Support\Facades\Route;
 //1ª rota feitas durante o desenvolvimento desse sistema
 Route::get('/','AdminTarefaController\HomeController@home')->name('home');
 
-Route::prefix('tarefa')->group(function(){
-
+Route::prefix('projfunc')->group(function(){
 
     //as rotas abaixo foram as primeiras a serem criada durante o desenvolvimento do projeto
-
     Route::get('listProj','AdminTarefaController\ProjetoController@listProj')->name('listProj');
 
     Route::get('addProj','AdminTarefaController\ProjetoController@addproj')->name('addProj');
@@ -33,7 +31,6 @@ Route::prefix('tarefa')->group(function(){
     Route::post('editProj/{id_projeto}','AdminTarefaController\ProjetoController@editActionProj');
 
     Route::get('deleteProj/{id_projeto}','AdminTarefaController\ProjetoController@delProj')->name('delProj');
-
 
 
     Route::get('listFunc','AdminTarefaController\FuncionalidadeController@listFunc')->name('listFunc');

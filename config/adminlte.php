@@ -169,9 +169,9 @@ return [
 
     'dashboard_url' => '/',
 
-    'logout_url' => 'tarefa/logout',
+    'logout_url' => 'projfunc/logout',
 
-    'login_url' => 'tarefa/login',
+    'login_url' => 'projfunc/login',
 
     'register_url' => null,//'tarefa/register',
 
@@ -221,11 +221,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Projeto',
-                    'url'  => 'tarefa/addProj',
+                    'url'  => 'projfunc/addProj',
                 ],
                 [
-                    'text' => 'Tarefa',
-                    'url'  => 'tarefa/addFunc',
+                    'text' => 'Funcionalidade',
+                    'url'  => 'projfunc/addFunc',
                 ],
             ],
         ],
@@ -236,11 +236,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Projeto',
-                    'url'  => 'tarefa/listProj',
+                    'url'  => 'projfunc/listProj',
                 ],
                 [
-                    'text' => 'Tarefa',
-                    'url'  => 'tarefa/listFunc',
+                    'text' => 'Funcionalidade',
+                    'url'  => 'projfunc/listFunc',
                 ],
             ],
         ],

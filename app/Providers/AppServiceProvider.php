@@ -26,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
          //informação que irá aprecer nas view
-         View::Share('versao','1.0');
+         View::Share('versao','1.2');
     }
 }

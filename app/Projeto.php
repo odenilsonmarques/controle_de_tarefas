@@ -14,7 +14,7 @@ class Projeto extends Model
 
     protected $fillable = ['nome_projeto','descricao','data_inicio','data_fim','status_projeto'];
 
-    public function tarefas(){
+    public function  funcionalidades(){
         return $this->hasMany(Funcionalidade::class);
     }
 

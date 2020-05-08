@@ -5,14 +5,19 @@
 @section('content')
     <div class="card">
         @if($errors->any())
-            <ul>
-                <h3 style="color:#ff0000">Ocorreu um Erro</h3>
-                    @foreach($errors->all() as $error)
-                        <li style="color:#ff0000">
-                            {{$error}}<br/>
-                        </li>
-                    @endforeach    
-            </ul>
+        <div class="row">
+            <div class="col-sm-12">  
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>
+                                {{$error}}<br/>
+                            </li>
+                        @endforeach    
+                    </ul>
+                </div>
+            </div>
+        </div>
         @endif
         <form method="POST" role="form">
             @csrf
@@ -21,7 +26,7 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             <label for="nome_funcionalidade">NOME DA FUNCIONALIDADE</label><br>
-                            <input type="text" name="nome_funcionalidade"" id="nome_funcionalidade"" class="form-control" value="{{old('nome_funcionalidade"')}}" placeholder="Informe o nome da funcionalidade">
+                            <input type="text" name="nome_funcionalidade" id="nome_funcionalidade" class="form-control" value="{{old('nome_funcionalidade')}}" placeholder="Informe o nome da funcionalidade">
                         </div>
                     </div>
                 </div>

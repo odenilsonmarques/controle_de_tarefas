@@ -15,7 +15,6 @@ use Illuminate\Http\Request;
 
 class FuncionalidadeController extends Controller
 {
-
     //esse contrutor, tem como proposito redirecionar o usuario para pagina de login, se este não estiver logado e tentar acessar alguma aera do sistema
     public function __construct(){
         $this->middleware('auth');
@@ -56,7 +55,8 @@ class FuncionalidadeController extends Controller
         $funcionalidade-> status_funcionalidade = $status_funcionalidade;
         $funcionalidade-> projeto = $projeto;
         $funcionalidade->save();
-        return redirect()->route('listFunc');
+        return redirect()->route('listFunc')
+        ->with('FuncionalidadeCad','Funcionalidade cadastrada com sucesso !');
     }
     public function editFunc($id_funcionalidade){
         $data = Funcionalidade::find($id_funcionalidade);
@@ -80,8 +80,8 @@ class FuncionalidadeController extends Controller
         $status_funcionalidade = $request->input('status_funcionalidade');
        
         if($data_inicio > $data_fim){
-            return redirect()->route('editFunc')
-            ->withErrors('Erro! a data de inicio não pode ser maior do que data a final')
+            return redirect()->route('editFunc',$id_funcionalidade)
+            ->WithErrors('Erro! a data de inicio não pode ser maior do que a data do término')
             ->WithInput();
          }
         //para usar o comando abaixo é necessario permitir no arquivo model Funcionalidade, atraves do comando $fillable, pois é como se estivesse se passando um grande massa de dados. Porem pode ser feito de outra forma
@@ -90,7 +90,14 @@ class FuncionalidadeController extends Controller
         return redirect()->route('listFunc');
     }
     public function delFunc($id_funcionalidade){
-        Funcionalidade::find($id_funcionalidade)->delete();
-        return redirect()->route('listFunc');
+        try{
+            Funcionalidade::find($id_funcionalidade)->delete();
+            return redirect()->route('listFunc')
+            ->with('Funcionalidade','Funcionalidade excluída com sucesso !');
+        }catch(\Exception $e){
+            return redirect()->route('listFunc')
+                ->with('Erro', 'Erro! a funcionalidade não pode ser excluída, contate o administrador do sistema');
+        }
     }
 }
+

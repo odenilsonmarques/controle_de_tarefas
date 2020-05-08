@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 
 class ProjetoController extends Controller
 {
-    
     //esse contrutor, tem como proposito redirecionar o usuario para pagina de login, se este não estiver logado e tentar acessar alguma aera do sistema
     public function __construct(){
         $this->middleware('auth');
@@ -40,9 +39,10 @@ class ProjetoController extends Controller
 
             if($data_inicio > $data_fim){
                 return redirect()->route('addProj')
-                ->withErrors('Erro! a data de inicio não pode ser maior do que a data de término')
+                ->WithErrors('Erro! a data de inicio não pode ser maior do que data do término')
                 ->WithInput();
-            }
+             }
+
             $projeto = new Projeto();
             $projeto-> nome_projeto = $nome_projeto;
             $projeto-> descricao = $descricao;
@@ -50,7 +50,8 @@ class ProjetoController extends Controller
             $projeto-> data_fim = $data_fim;
             $projeto-> status_projeto = $status_projeto;
             $projeto-> save();
-            return redirect()->route('listProj');
+            return redirect()->route('listProj')
+            ->with('SucessoCad','Projeto cadastrado com sucesso !');
     }
     public function editProj($id_projeto){
         $data = Projeto::find($id_projeto);
@@ -75,17 +76,24 @@ class ProjetoController extends Controller
             $status_projeto = $request->input('status_projeto');
 
             if($data_inicio > $data_fim){
-                return redirect()->route('editProj')
-                ->withErrors('Erro! a data de inicio não pode ser maior do que data a final')
-                ->withIpunt();
-            }
+                return redirect()->route('editProj', $id_projeto)
+                ->WithErrors('Erro! a data de inicio não pode ser maior do que a data do término')
+                ->WithInput();
+             }
 
             Projeto::find($id_projeto)
             ->update(['nome_projeto'=>$nome_projeto,'descricao'=>$descricao,'data_inicio'=>$data_inicio,'data_fim'=>$data_fim,'status_projeto'=>$status_projeto]);
             return redirect()->route('listProj');
     }
     public function delProj($id_projeto){
-        Projeto::find($id_projeto)->delete();
-        return redirect()->route('listProj');
+        try{
+            Projeto::find($id_projeto)->delete();
+            return redirect()->route('listProj')
+            ->With('Sucesso','Projeto excluído com sucesso !');
+           
+        }catch(\Exception $e){
+            return redirect()->route('listProj')
+                ->with('Erro', 'Erro! o projeto não pode ser excluído, contate o administrador do sistema');
+        }
     }
 }
