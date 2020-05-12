@@ -20,6 +20,7 @@ class FuncionalidadeController extends Controller
         $this->middleware('auth');
     }
     public function listFunc(){
+        $projeto = Funcionalidade::with('projeto')->get();
         $listFunc = Funcionalidade::paginate(5);
         return view('AdminTarefaViews.listFunc',['listFunc'=>$listFunc]);
 
@@ -36,16 +37,16 @@ class FuncionalidadeController extends Controller
             'data_inicio'=>['required','date'],
             'data_fim'=>['required','date'],
             'status_funcionalidade'=>['required','string'],
-            'projeto'=>['required','int']
+            'projeto_id'=>['required','int']
         ]);
         $nome_funcionalidade = $request->input('nome_funcionalidade');
         $data_inicio = $request->input('data_inicio');
         $data_fim = $request->input('data_fim');
         $status_funcionalidade = $request->input('status_funcionalidade');
-        $projeto = $request->input('projeto');
+        $projeto_id = $request->input('projeto_id');
         if($data_inicio > $data_fim){
            return redirect()->route('addFunc')
-           ->withErrors('Erro! a data de inicio não pode ser maior do que a data de término')
+           ->withErrors('Erro! a data de inicio não pode ser maior do que a data do término')
            ->WithInput();
         }
         $funcionalidade = new Funcionalidade();
@@ -53,7 +54,8 @@ class FuncionalidadeController extends Controller
         $funcionalidade-> data_inicio = $data_inicio;
         $funcionalidade-> data_fim = $data_fim;
         $funcionalidade-> status_funcionalidade = $status_funcionalidade;
-        $funcionalidade-> projeto = $projeto;
+        $funcionalidade-> projeto_id = $projeto_id;
+
         $funcionalidade->save();
         return redirect()->route('listFunc')
         ->with('FuncionalidadeCad','Funcionalidade cadastrada com sucesso !');
@@ -84,19 +86,26 @@ class FuncionalidadeController extends Controller
             ->WithErrors('Erro! a data de inicio não pode ser maior do que a data do término')
             ->WithInput();
          }
-        //para usar o comando abaixo é necessario permitir no arquivo model Funcionalidade, atraves do comando $fillable, pois é como se estivesse se passando um grande massa de dados. Porem pode ser feito de outra forma
-        Funcionalidade::find($id_funcionalidade)
-        ->update(['nome_funcionalidade'=>$nome_funcionalidade,'data_inicio'=>$data_inicio,'data_fim'=>$data_fim,'status_funcionalidade'=>$status_funcionalidade]);
-        return redirect()->route('listFunc');
+
+         try{
+            //para usar o comando abaixo é necessario permitir no arquivo model Funcionalidade, atraves do comando $fillable, pois é como se estivesse se passando um grande massa de dados. Porem pode ser feito de outra forma
+            Funcionalidade::find($id_funcionalidade)
+            ->update(['nome_funcionalidade'=>$nome_funcionalidade,'data_inicio'=>$data_inicio,'data_fim'=>$data_fim,'status_funcionalidade'=>$status_funcionalidade]);
+            return redirect()->route('listFunc')
+            ->With('Sucesso','Funcionalidade alterada com sucesso !');
+         }catch(\Excpetion $e){
+            return redirect()->route('listFunc')
+            ->With('Erro','Erro! a funcionalidade não pode ser alterada, contate o administrador do sistema !');
+         }
     }
     public function delFunc($id_funcionalidade){
         try{
             Funcionalidade::find($id_funcionalidade)->delete();
             return redirect()->route('listFunc')
-            ->with('Funcionalidade','Funcionalidade excluída com sucesso !');
+            ->with('Sucesso','Funcionalidade excluída com sucesso !');
         }catch(\Exception $e){
             return redirect()->route('listFunc')
-                ->with('Erro', 'Erro! a funcionalidade não pode ser excluída, contate o administrador do sistema');
+            ->with('Erro', 'Erro! a funcionalidade não pode ser excluída, contate o administrador do sistema');
         }
     }
 }

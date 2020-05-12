@@ -4,7 +4,12 @@
 
 @section('content_header')
     <h2 style="text-align:center"><strong>lista de projetos</strong></h2>
-    <a href="{{route('addProj')}}" class="btn btn-sm btn-success">Adicionar novo projeto</a>
+    <a href="{{route('addProj')}}" class="btn btn-sm btn-success icon">
+        <div class="icon">
+            <i class="fas fa-fw fa-user-plus"></i>
+        </div>
+        Adicionar novo projeto
+    </a>
 @endsection
 
 @section('content')

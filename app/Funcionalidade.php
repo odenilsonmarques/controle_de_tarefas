@@ -13,5 +13,9 @@ class Funcionalidade extends Model
     public $timestamps = false;
     
     protected $fillable = ['nome_funcionalidade','data_inicio','data_fim','status_funcionalidade'];
-    
+
+    public function projeto(){
+        return $this->belongsTo(Projeto::class,'projeto_id','id_projeto');
+        
+    }
 }

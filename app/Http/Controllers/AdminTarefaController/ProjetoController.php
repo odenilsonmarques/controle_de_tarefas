@@ -81,9 +81,15 @@ class ProjetoController extends Controller
                 ->WithInput();
              }
 
-            Projeto::find($id_projeto)
-            ->update(['nome_projeto'=>$nome_projeto,'descricao'=>$descricao,'data_inicio'=>$data_inicio,'data_fim'=>$data_fim,'status_projeto'=>$status_projeto]);
-            return redirect()->route('listProj');
+            try{
+                Projeto::find($id_projeto)
+                ->update(['nome_projeto'=>$nome_projeto,'descricao'=>$descricao,'data_inicio'=>$data_inicio,'data_fim'=>$data_fim,'status_projeto'=>$status_projeto]);
+                return redirect()->route('listProj')
+                ->With('Sucesso','Projeto alterado com sucesso !');
+            }catch(\Exception $e){
+                return redirect()->route('listProj')
+                ->with('Erro', 'Erro! o projeto não pode ser alterado, contate o administrador do sistema');
+            }
     }
     public function delProj($id_projeto){
         try{

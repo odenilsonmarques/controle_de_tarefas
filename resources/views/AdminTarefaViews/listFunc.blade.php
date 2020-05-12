@@ -4,16 +4,21 @@
     
 @section('content_header')
     <h2 style="text-align:center"><strong>lista de funcionalidades</strong></h2>
-    <a href="{{route('addFunc')}}" class="btn btn-sm btn-success">Adicionar nova funcionalidade</a>
+    <a href="{{route('addFunc')}}" class="btn btn-sm btn-success">
+        <div class="icon">
+            <i class="fas fa-fw fa-user-plus"></i>
+        </div>
+        Adicionar nova funcionalidade
+    </a>
 @endsection
 
 @section('content')
     <div class="row">
         <div class="col-sm-12 text-center ">  
-            @if(session('Funcionalidade'))
+            @if(session('Sucesso'))
                 <div class="alert alert-success">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times</a>
-                    <p>{{session('Funcionalidade')}}</p>
+                    <p>{{session('Sucesso')}}</p>
                 </div>
             @endif
             
@@ -40,6 +45,7 @@
                 <th>INICIO</th>
                 <th>TERMINO</th>
                 <th>SITUAÇÃO</th>
+                <th>PROJETO</th>
                 <th>AÇÃO</th>
             </tr>
         @foreach ($listFunc as $item)
@@ -49,6 +55,7 @@
                 <td>{{\Carbon\Carbon::parse($item->data_inicio)->format('d/m/Y')}}</td>
                 <td>{{\Carbon\Carbon::parse($item->data_fim)->format('d/m/Y')}}</td>
                 <td>{{$item->status_funcionalidade}}</td>
+                <td>{{$item->projeto->nome_projeto}}</td>
                 <td>
                     <a href="{{route('editFunc',['id_funcionalidade'=>$item->id_funcionalidade])}}" class="btn btn-sm btn-info">Editar</a>
                     <a href="{{route('delFunc',['id_funcionalidade'=>$item->id_funcionalidade])}}" class="btn btn-sm btn-danger" onclick="return confirm('DESEJA EXCLUIR A TAREFA ?')">Excluir</a>
