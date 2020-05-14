@@ -17,5 +17,4 @@ class Projeto extends Model
     public function funcionalidades(){
         return $this->hasMany(Funcionalidade::class,'projeto_id','id_projeto');
     }
-
 }

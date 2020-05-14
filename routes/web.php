@@ -32,7 +32,6 @@ Route::prefix('projfunc')->group(function(){
 
     Route::get('deleteProj/{id_projeto}','AdminTarefaController\ProjetoController@delProj')->name('delProj');
 
-
     Route::get('listFunc','AdminTarefaController\FuncionalidadeController@listFunc')->name('listFunc');
 
     Route::get('addFunc','AdminTarefaController\FuncionalidadeController@addFunc')->name('addFunc');
@@ -54,7 +53,7 @@ Route::prefix('projfunc')->group(function(){
     Route::post('login','Auth\LoginController@authenticate');
 
     Route::post('logout','Auth\LoginController@logout')->name('logout');
-    
+
     Route::fallback(function(){
         return view('AdminTarefaViews\404');
     });

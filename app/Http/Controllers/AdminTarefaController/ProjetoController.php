@@ -17,7 +17,7 @@ class ProjetoController extends Controller
         $this->middleware('auth');
     }
     public function listProj(){
-        $listProj = Projeto::paginate(5);
+        $listProj = Projeto::paginate('5');
         return view('AdminTarefaViews.listProj',['listProj'=>$listProj]);
     }
     public function addProj(){
