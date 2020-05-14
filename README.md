@@ -1,13 +1,9 @@
 
-<h3>Sistema de Controle de Tarefas</h3>
+<h3>Sistema de Controle de Projetos</h3>
 
-.O sistema que está sendo desenvolvido, tem como propósito, definir e acompanhar as tarefas a serem implementadas em um projeto, dessa forma o mesmo pode ser utilizado em direfenteres áreas.
+.O sistema que está sendo desenvolvido, tem como propósito, definir e acompanhar as tarefas(funcionalidades) a serem implementadas em um projeto, dessa forma o mesmo pode ser utilizado em direfenteres áreas.
 
 .As ferramentas utilizadas: Framework Laravel, (banco de dados) sql, bootstrap, javascript, html e css
-
-
-
-
 
 
 
