@@ -53,15 +53,15 @@ class ProjetoController extends Controller
             return redirect()->route('listProj')
             ->with('SucessoCad','Projeto cadastrado com sucesso !');
     }
-    public function editProj($id_projeto){
-        $data = Projeto::find($id_projeto);
+    public function editProj($id_projetos){
+        $data = Projeto::find($id_projetos);
         if($data){
             return view('AdminTarefaViews.editProj',['data'=>$data]);
         }else{
             return redirect()->route('listProj');
         }
     }
-    public function editActionProj(Request $request, $id_projeto){
+    public function editActionProj(Request $request, $id_projetos){
         $request -> validate([
             'nome_projeto'=>['required','string','min:5'],
             'descricao'=>['required','string','min:10'],
@@ -76,13 +76,13 @@ class ProjetoController extends Controller
             $status_projeto = $request->input('status_projeto');
 
             if($data_inicio > $data_fim){
-                return redirect()->route('editProj', $id_projeto)
+                return redirect()->route('editProj', $id_projetos)
                 ->WithErrors('Erro! a data de inicio não pode ser maior do que a data do término')
                 ->WithInput();
              }
 
             try{
-                Projeto::find($id_projeto)
+                Projeto::find($id_projetos)
                 ->update(['nome_projeto'=>$nome_projeto,'descricao'=>$descricao,'data_inicio'=>$data_inicio,'data_fim'=>$data_fim,'status_projeto'=>$status_projeto]);
                 return redirect()->route('listProj')
                 ->With('Sucesso','Projeto alterado com sucesso !');
@@ -91,9 +91,9 @@ class ProjetoController extends Controller
                 ->with('Erro', 'Erro! o projeto não pode ser alterado, contate o administrador do sistema');
             }
     }
-    public function delProj($id_projeto){
+    public function delProj($id_projetos){
         try{
-            Projeto::find($id_projeto)->delete();
+            Projeto::find($id_projetos)->delete();
             return redirect()->route('listProj')
             ->With('Sucesso','Projeto excluído com sucesso !');
            

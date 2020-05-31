@@ -60,15 +60,15 @@ class FuncionalidadeController extends Controller
         return redirect()->route('listFunc')
         ->with('FuncionalidadeCad','Funcionalidade cadastrada com sucesso !');
     }
-    public function editFunc($id_funcionalidade){
-        $data = Funcionalidade::find($id_funcionalidade);
+    public function editFunc($id_funcionalidades){
+        $data = Funcionalidade::find($id_funcionalidades);
         if($data){
             return view('AdminTarefaViews.editFunc',['data'=>$data]);
         }else{
             return redirect()->route('listFunc');
         }
     }
-    public function editActionFunc(Request $request, $id_funcionalidade){
+    public function editActionFunc(Request $request, $id_funcionalidades){
         $request->validate([
             'nome_funcionalidade'=>['required','string','min:5'],
             'data_inicio'=>['required','date'],
@@ -82,14 +82,14 @@ class FuncionalidadeController extends Controller
         $status_funcionalidade = $request->input('status_funcionalidade');
        
         if($data_inicio > $data_fim){
-            return redirect()->route('editFunc',$id_funcionalidade)
+            return redirect()->route('editFunc',$id_funcionalidades)
             ->WithErrors('Erro! a data de inicio não pode ser maior do que a data do término')
             ->WithInput();
          }
 
          try{
             //para usar o comando abaixo é necessario permitir no arquivo model Funcionalidade, atraves do comando $fillable, pois é como se estivesse se passando um grande massa de dados. Porem pode ser feito de outra forma
-            Funcionalidade::find($id_funcionalidade)
+            Funcionalidade::find($id_funcionalidades)
             ->update(['nome_funcionalidade'=>$nome_funcionalidade,'data_inicio'=>$data_inicio,'data_fim'=>$data_fim,'status_funcionalidade'=>$status_funcionalidade]);
             return redirect()->route('listFunc')
             ->With('Sucesso','Funcionalidade alterada com sucesso !');
@@ -98,9 +98,9 @@ class FuncionalidadeController extends Controller
             ->With('Erro','Erro! a funcionalidade não pode ser alterada, contate o administrador do sistema !');
          }
     }
-    public function delFunc($id_funcionalidade){
+    public function delFunc($id_funcionalidades){
         try{
-            Funcionalidade::find($id_funcionalidade)->delete();
+            Funcionalidade::find($id_funcionalidades)->delete();
             return redirect()->route('listFunc')
             ->with('Sucesso','Funcionalidade excluída com sucesso !');
         }catch(\Exception $e){

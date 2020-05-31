@@ -50,15 +50,15 @@
             </tr>
         @foreach ($listFunc as $item)
             <tr>
-                <td>{{$item->id_funcionalidade}}</td>
+                <td>{{$item->id_funcionalidades}}</td>
                 <td>{{$item->nome_funcionalidade}}</td>
                 <td>{{\Carbon\Carbon::parse($item->data_inicio)->format('d/m/Y')}}</td>
                 <td>{{\Carbon\Carbon::parse($item->data_fim)->format('d/m/Y')}}</td>
                 <td>{{$item->status_funcionalidade}}</td>
                 <td>{{$item->projeto->nome_projeto}}</td>
                 <td>
-                    <a href="{{route('editFunc',['id_funcionalidade'=>$item->id_funcionalidade])}}" class="btn btn-sm btn-info">Editar</a>
-                    <a href="{{route('delFunc',['id_funcionalidade'=>$item->id_funcionalidade])}}" class="btn btn-sm btn-danger" onclick="return confirm('DESEJA EXCLUIR A TAREFA ?')">Excluir</a>
+                    <a href="{{route('editFunc',['id_funcionalidades'=>$item->id_funcionalidades])}}" class="btn btn-sm btn-info">Editar</a>
+                    <a href="{{route('delFunc',['id_funcionalidades'=>$item->id_funcionalidades])}}" class="btn btn-sm btn-danger" onclick="return confirm('DESEJA EXCLUIR A TAREFA ?')">Excluir</a>
                 </td>
             </tr>
         @endforeach

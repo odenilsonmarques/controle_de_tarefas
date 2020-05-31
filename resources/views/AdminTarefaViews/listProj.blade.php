@@ -50,15 +50,15 @@
             </tr>
         @foreach ($listProj as $item)
             <tr>
-                <td>{{$item->id_projeto}}</td>
+                <td>{{$item->id_projetos}}</td>
                 <td>{{$item->nome_projeto}}</td>
                 <td>{{$item->descricao}}</td>
                 <td>{{\Carbon\Carbon::parse($item->data_inicio)->format('d/m/Y')}}</td>
                 <td>{{\Carbon\Carbon::parse($item->data_fim)->format('d/m/Y')}}</td>
                 <td>{{$item->status_projeto}}</td>
                 <td>
-                    <a href="{{route('editProj',['id_projeto'=>$item->id_projeto])}}" class="btn btn-sm btn-info">Editar</a>
-                    <a href="{{route('delProj',['id_projeto'=>$item->id_projeto])}}"  class="btn btn-sm btn-danger" onclick="return confirm('DESEJA EXCLUIR O PROJETO ?')">Excluir</a>
+                    <a href="{{route('editProj',['id_projetos'=>$item->id_projetos])}}" class="btn btn-sm btn-info">Editar</a>
+                    <a href="{{route('delProj',['id_projetos'=>$item->id_projetos])}}"  class="btn btn-sm btn-danger" onclick="return confirm('DESEJA EXCLUIR O PROJETO ?')">Excluir</a>
                 </td>
             </tr>
         @endforeach

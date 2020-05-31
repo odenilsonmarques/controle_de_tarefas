@@ -26,11 +26,11 @@ Route::prefix('projfunc')->group(function(){
 
     Route::post('addProj','AdminTarefaController\ProjetoController@addActionProj');
 
-    Route::get('editProj/{id_projeto}','AdminTarefaController\ProjetoController@editProj')->name('editProj');
+    Route::get('editProj/{id_projetos}','AdminTarefaController\ProjetoController@editProj')->name('editProj');
 
-    Route::post('editProj/{id_projeto}','AdminTarefaController\ProjetoController@editActionProj');
+    Route::post('editProj/{id_projetos}','AdminTarefaController\ProjetoController@editActionProj');
 
-    Route::get('deleteProj/{id_projeto}','AdminTarefaController\ProjetoController@delProj')->name('delProj');
+    Route::get('deleteProj/{id_projetos}','AdminTarefaController\ProjetoController@delProj')->name('delProj');
 
     Route::get('listFunc','AdminTarefaController\FuncionalidadeController@listFunc')->name('listFunc');
 
@@ -38,11 +38,11 @@ Route::prefix('projfunc')->group(function(){
 
     Route::post('addFunc','AdminTarefaController\FuncionalidadeController@addActionFunc');
 
-    Route::get('editFunc/{id_funcionalidade}','AdminTarefaController\FuncionalidadeController@editFunc')->name('editFunc');
+    Route::get('editFunc/{id_funcionalidades}','AdminTarefaController\FuncionalidadeController@editFunc')->name('editFunc');
 
-    Route::post('editFunc/{id_funcionalidade}','AdminTarefaController\FuncionalidadeController@editActionFunc');
+    Route::post('editFunc/{id_funcionalidades}','AdminTarefaController\FuncionalidadeController@editActionFunc');
 
-    Route::get('deleteFunc/{id_funcionalidade}','AdminTarefaController\FuncionalidadeController@delFunc')->name('delFunc');
+    Route::get('deleteFunc/{id_funcionalidades}','AdminTarefaController\FuncionalidadeController@delFunc')->name('delFunc');
 
     //as rotas abaixo foram as segundas a serem criada durante o desenvolvimento do projeto
     Route::get('register','Auth\RegisterController@index')->name('register');

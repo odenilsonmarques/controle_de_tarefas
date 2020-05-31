@@ -61,7 +61,7 @@
                                 <select class="form-control" name="projeto_id">
                                         <option value="">Selecione um projeto</option><br/><br/>
                                         @foreach($projeto as $item)
-                                            <br><option value="{{$item['id_projeto']}}">{{$item['nome_projeto']}}</option><br/>
+                                            <br><option value="{{$item['id_projetos']}}">{{$item['nome_projeto']}}</option><br/>
                                         @endforeach
                                 </select>
                             </div>

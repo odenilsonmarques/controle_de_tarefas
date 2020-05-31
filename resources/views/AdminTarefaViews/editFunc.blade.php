@@ -31,7 +31,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="nome_funcionalidade">NOME DA FUNCIONALIDADE *</label><br>
-                                    <input type="text" name="nome_funcionalidade" id="nome_funcionalidade" class="form-control" value="{{$data->nome_funcionalidade}}" placeholder="Informe o nome da funcionalidade">
+                                <input type="text" name="nome_funcionalidade" id="nome_funcionalidade" class="form-control" value="{{$data->nome_funcionalidade}}" placeholder="Informe o nome da funcionalidade">
                             </div>
                         </div>
                     </div>
