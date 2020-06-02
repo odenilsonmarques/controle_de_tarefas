@@ -23,14 +23,21 @@ class HomeController extends Controller
 
      //nota 1: sempre que o usuario logar ele vai ser redirecionado para algumas view, essa configuração está no arquivo RedirectIfAuthenticate que está dentro da pasta middleware
     //nota 2: esta rota procura o arquivo authenticate que está dentro da pasta middleware, para mandar o usuario para o form de login.
-    
+    /*
     public function __construct()
     {
         $this->middleware('auth');
     }
+    */
+    /*
     public function index(){
-        return view('AdminTarefaViews.home');
+        return view('AdminTarefaViews.idex');
     } 
+    */
+    public function index(){
+        return view('AdminTarefaViews.index');
+    } 
+    
      //este metodo é reponsavel por chamar a view index do sistema
      public function home(){
 
