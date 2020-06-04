@@ -1,0 +1,45 @@
+.navbar-default{
+    border:none;
+}
+.navbar-default .container-fluid{
+    background-color: #B22222;
+}
+.navbar-default .navbar-brand{
+    font-size: 27px;
+    color:#fff;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover{
+    color: #269abc;
+    text-decoration:none;
+}
+a{
+    font-size:20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.jumbotron {
+    margin-top:4%;
+    background-color:#B22222;
+}
+h2{
+    font-size: 35px;
+    color: #FFF;
+}
+h3{
+    color:#fff;
+}
+
+ span:hover{
+    color: #269abc;
+    text-decoration:none;
+}
+
+
+
+
+
+
+
