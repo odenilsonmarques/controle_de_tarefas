@@ -24,22 +24,66 @@ a{
     margin-top:4%;
     background-color:#B22222;
 }
+.jumbotron h3{
+    color:#fff;
+}
 h2{
     font-size: 35px;
     color: #FFF;
 }
+article{
+    margin-top: 7%;
+}
+span{
+    color:#B22222;
+    font-size:50px;
+}
 h3{
-    color:#fff;
+    color:#B22222;
 }
-
- span:hover{
-    color: #269abc;
-    text-decoration:none;
+section{
+    margin-top: 7%;
 }
-
-
-
-
-
-
+section .container-fluid{
+    background-color: #FFF5EE;
+}
+ #contato{
+    background-color: #FFF;
+}
+section .container{
+    margin-top: 1%;
+}
+.col-lg-10 p{
+  font-size:20px;
+  text-align:justify;
+  color:#B22222;
+}
+.col-lg-2 span{
+    color:#B22222;
+    font-size:50px;
+    margin-top:20%;
+    font-size:75px;
+}
+.col-lg-5 p{
+   color:#B22222;  
+}
+.col-lg-5 span{
+    color:#B22222;
+    font-size: 20px;
+ }
+ footer{
+    margin-top: 5%;
+    margin-bottom: 1%;
+ }
+ footer .container-fluid{
+   color:#B22222;
+   background-color: #FFF5EE;
+ }
+ footer .container{
+    margin-top: 3%;
+    margin-bottom: 3%;
+ }
+ footer .col-lg-12{
+    font-size: 15px;
+ }
 
