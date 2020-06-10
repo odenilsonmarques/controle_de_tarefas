@@ -15,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
 //1ª rota feitas durante o desenvolvimento desse sistema
-//Route::get('/','AdminTarefaController\HomeController@home')->name('home');
+
 Route::get('/','AdminTarefaController\HomeController@index');
 
 Route::prefix('projfunc')->group(function(){
+    Route::get('home','AdminTarefaController\HomeController@home')->name('home');
 
     //as rotas abaixo foram as primeiras a serem criada durante o desenvolvimento do projeto
     Route::get('listProj','AdminTarefaController\ProjetoController@listProj')->name('listProj');

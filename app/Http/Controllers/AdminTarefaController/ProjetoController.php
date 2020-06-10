@@ -13,11 +13,11 @@ use Illuminate\Http\Request;
 class ProjetoController extends Controller
 {
     //esse contrutor, tem como proposito redirecionar o usuario para pagina de login, se este não estiver logado e tentar acessar alguma aera do sistema
-    /*
+    
     public function __construct(){
         $this->middleware('auth');
     }
-    */
+    
     public function listProj(){
         $listProj = Projeto::paginate('5');
         return view('AdminTarefaViews.listProj',['listProj'=>$listProj]);

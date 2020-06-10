@@ -35,7 +35,7 @@ class LoginController extends Controller
     //protected $redirectTo = RouteServiceProvider::HOME;
 
     //rota (home) chamada quando o usuario logar no sistema. por padrao o laravel criar a rota acima, mas tava dando erro, logo resolvi usar a rota abaixo
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'home';
 
     /**
      * Create a new controller instance.
@@ -46,17 +46,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    /*
+    public function __construct(){
+        $this->middleware('auth');
+    }*/
+    
      //esta função chama o view login(formulario de login de usuario)
      public function index(){
         return view('AdminTarefaViews.login');
-        
     }
     public function authenticate(Request $request){
         //pegando os dados
         $data = $request->only([
             'email',
             'password'
-            
         ]);
         //validando os dados
         $validator = $this ->validator($data);

@@ -29,7 +29,7 @@
                                 <li><a href="#">Projetos <span class="glyphicon glyphicon-th logo-small" style="color:#FFF;font-size:15px"></span></a></li>
                                 <li><a href="#">Sobre <span class="glyphicon glyphicon-tasks logo-small" style="color:#FFF;font-size:15px"></span></a></li>
                                 <li><a href="#">Contatos <span class="glyphicon glyphicon-earphone logo-small" style="color:#FFF;font-size:15px"></span></a></li>
-                                <li><a href="#">Login <span class="glyphicon glyphicon-user logo-small" style="color:#FFF;font-size:15px"></span></a></li>
+                                <li><a href="{{route('login')}}">Login <span class="glyphicon glyphicon-user logo-small" style="color:#FFF;font-size:15px"></span></a></li>
                             </ul>
                         </div>   
                     </div>

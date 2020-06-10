@@ -16,11 +16,11 @@ use Illuminate\Http\Request;
 class FuncionalidadeController extends Controller
 {
     //esse contrutor, tem como proposito redirecionar o usuario para pagina de login, se este não estiver logado e tentar acessar alguma aera do sistema
-   /*
+   
     public function __construct(){
         $this->middleware('auth');
     }
-    */
+    
     public function listFunc(){
         $projeto = Funcionalidade::with('projeto')->get();
         $listFunc = Funcionalidade::paginate(5);

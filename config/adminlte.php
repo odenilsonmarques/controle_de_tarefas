@@ -167,7 +167,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => '/',
+    'dashboard_url' => 'projfunc/home',
 
     'logout_url' => 'projfunc/logout',
 
@@ -211,7 +211,7 @@ return [
        
         [
             'text' => 'Home',
-            'url'  => '/',
+            'url'  => 'projfunc/home',
             'icon' => 'fas fa-fw fa-home',
         ],
 
