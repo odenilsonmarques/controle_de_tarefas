@@ -62,7 +62,7 @@ class FuncionalidadeController extends Controller
         $funcionalidade-> projeto_id = $projeto_id;
 
         $funcionalidade->save();
-        return redirect()->route('listFunc', ['id' => $projeto_id])
+        return redirect()->route('listFunc', ['id_funcionalidades' => $projeto_id])
         ->with('FuncionalidadeCad','Funcionalidade cadastrada com sucesso !');
     }
     public function editFunc($id_funcionalidades){

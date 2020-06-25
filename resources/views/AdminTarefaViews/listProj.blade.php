@@ -57,7 +57,7 @@
                 <td>{{\Carbon\Carbon::parse($item->data_fim)->format('d/m/Y')}}</td>
                 <td>{{$item->status_projeto}}</td>
                 <td>
-                    <a href="{{route('listFunc',['id'=>$item->id_projetos])}}" class="btn btn-sm btn-info">Funcionalidades</a>
+                    <a href="{{route('listFunc',['id_funcionalidades'=>$item->id_projetos])}}" class="btn btn-sm btn-info">Funcionalidades</a>
                     <a href="{{route('editProj',['id_projetos'=>$item->id_projetos])}}" class="btn btn-sm btn-info">Editar</a>
                     <a href="{{route('delProj', ['id_projetos'=>$item->id_projetos])}}" class="btn btn-sm btn-danger" onclick="return confirm('DESEJA EXCLUIR O PROJETO ?')">Excluir</a>
                 </td>
