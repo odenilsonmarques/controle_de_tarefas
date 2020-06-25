@@ -25,6 +25,7 @@ class ProjetoController extends Controller
     public function addProj(){
         return view('AdminTarefaViews.addProj');
     }
+    
     public function addActionProj(Request $request){
         $request -> validate([
             'nome_projeto'=>['required','string','min:5'],

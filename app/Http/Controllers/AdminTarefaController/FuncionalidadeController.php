@@ -21,11 +21,14 @@ class FuncionalidadeController extends Controller
         $this->middleware('auth');
     }
     
-    public function listFunc(){
-        $projeto = Funcionalidade::with('projeto')->get();
-        $listFunc = Funcionalidade::paginate(5);
-        return view('AdminTarefaViews.listFunc',['listFunc'=>$listFunc]);
+    public function listFunc($projeto_id){
 
+        //$projeto = Funcionalidade::with('projeto')->get();
+        //$listFunc = Funcionalidade::where('id_funcionalidades')->paginate(5);
+        //$listFunc = Funcionalidade::paginate(5);
+        //$listFunc = Funcionalidade::find($projeto_id)->get();
+        $listFunc = Funcionalidade::where('projeto_id', $projeto_id)->get();
+        return view('AdminTarefaViews.listFunc',['listFunc'=>$listFunc]);
     }
     public function addFunc(){
         //a classe abaixo foi importada devido o relacionamento n:m 
@@ -59,7 +62,7 @@ class FuncionalidadeController extends Controller
         $funcionalidade-> projeto_id = $projeto_id;
 
         $funcionalidade->save();
-        return redirect()->route('listFunc')
+        return redirect()->route('listFunc', ['id' => $projeto_id])
         ->with('FuncionalidadeCad','Funcionalidade cadastrada com sucesso !');
     }
     public function editFunc($id_funcionalidades){

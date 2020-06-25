@@ -34,7 +34,7 @@ Route::prefix('projfunc')->group(function(){
 
     Route::get('deleteProj/{id_projetos}','AdminTarefaController\ProjetoController@delProj')->name('delProj');
 
-    Route::get('listFunc','AdminTarefaController\FuncionalidadeController@listFunc')->name('listFunc');
+    Route::get('listFunc/{id}','AdminTarefaController\FuncionalidadeController@listFunc')->name('listFunc');
 
     Route::get('addFunc','AdminTarefaController\FuncionalidadeController@addFunc')->name('addFunc');
 

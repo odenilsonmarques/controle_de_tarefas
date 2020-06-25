@@ -70,7 +70,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <button type="submit" class="btn btn-success icon">Cadastrar <i class="fas fa-fw fa-save (alias)"></i></button> 
-                            <a href="{{route('listFunc')}}" role="button" class="btn btn-danger icon">Cancelar <i class="fas fa-fw fa-times"></i></a>
+                            <a href="" role="button" class="btn btn-danger icon">Cancelar <i class="fas fa-fw fa-times"></i></a>
                         </div>
                     </div>
                 </div>

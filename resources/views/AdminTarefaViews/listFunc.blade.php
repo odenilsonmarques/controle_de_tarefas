@@ -64,7 +64,7 @@
         @endforeach
         </table><br>
         <!--comando para exibir a paginação iniciada com pagina no FuncionalidadeController-->
-        {{$listFunc->links()}}  
+      
         <div class="card-footer clearfix">
             <div class="float-right">
                 <!--essa informação foi declarada no arquivo AppServiceProvider-->
